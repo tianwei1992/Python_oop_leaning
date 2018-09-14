@@ -1,4 +1,5 @@
-class Person:
+from classtools import AttrDisplay
+class Person(AttrDisplay):
 	def __init__(self, name, job, pay):
 		self.name = name
 		self.job = job
@@ -7,8 +8,8 @@ class Person:
 		return self.name.split()[-1]
 	def giveRaise(self, percent):
 		self.pay = int(self.pay * (percent + 1))
-	def __str__(self):
-		return "Person---name:{},pay:{}".format(self.name, self.pay)
+	# def __str__(self):
+	# 	return "Person---name:{},pay:{}".format(self.name, self.pay)
 
 
 class Manager(Person):
@@ -26,7 +27,7 @@ if __name__ == "__main__":
 	b.giveRaise(0.1)
 	print(b)
 
-	print("Other testing……")
+	print("\nOther testing……")
 	"""比较instance.__dict__,dir(instance)"""
 	print(a.__dict__.keys())
 	print(dir(a))
