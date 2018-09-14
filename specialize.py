@@ -1,4 +1,4 @@
-"""Class interfaces"""
+"""Class interfaces & Abstract superclass"""
 
 class Super:
 	"""as a Abstract superclass, can't be instantialed until self.action func is realized"""
@@ -6,6 +6,8 @@ class Super:
 		print("in Super.method")
 	def delegate(self):
 		self.action()
+	def action(self):
+		raise NotImplementedError("action must be defined")
 
 class Inheritor(Super):
 	pass
@@ -35,3 +37,5 @@ if __name__ == "__main__":
 	print("\nProvider...")
 	x = Provider()
 	x.delegate()
+	y = Replacer()
+	y.delegate()
