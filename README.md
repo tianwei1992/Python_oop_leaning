@@ -2,7 +2,7 @@
 _参考：《Python学习手册》第六部分 OOP相关_
 
 ## 文档结构
-1. 两个文件夹，basic和advanced，前者对应27章，后者是更高级的用法
+1. 两个文件夹，basic和advanced，前者对应27章，后者是更高级的用法。
 
 2. basic/
    * classtools.py演示了工具类的定义，比如AttrDisplay类。
@@ -14,8 +14,9 @@ _参考：《Python学习手册》第六部分 OOP相关_
 3. advanced/
    * combination_demo/演示了好的类的嵌套，也叫组合。有Department、Processor、Pizzashop3个组合的例子。
    * delegation_demo/演示了委托，也叫代理。
-   * pseudo_private_attributes_demo/演示了类的伪私有属性的用法，解释了为什么需要它
+   * pseudo_private_attributes_demo/演示了类的伪私有属性的用法，解释了为什么需要它。
    * bound_or_unbound_mothod_demo/演示了绑定方法和未绑定方法的用法。注意在Python2和3中对未绑定方法是有区别的。另外也演示了Python的各种可调用对象，包括但不限于绑定方法，显示了Python语言的灵活性。
-   * mix_in_classes_deomo/由简到难演示了3个混合类的定义，然后在textmixin*.py中测试了效果，说明了多继承在应用得当的时候是很有用的工具。
+   * mix_in_classes_demo/由简到难演示了3个混合类的定义，然后在textmixin*.py中测试了效果，说明了多继承在应用得当的时候是很有用的工具。
+   * factory_demo/演示了最简单的工厂模式，这里仅做了解，书上的篇幅也很短。
 
 
