@@ -1,3 +1,4 @@
+"""Define class Person and class Manager with inheriting from AttrDisplay"""
 from classtools import AttrDisplay
 class Person(AttrDisplay):
 	def __init__(self, name, job, pay):

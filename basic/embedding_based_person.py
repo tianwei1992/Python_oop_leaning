@@ -3,7 +3,7 @@
     把Person类嵌入Manager类中，注意一些问题
 注意：
     这不是一个好的例子，只是为了举例
-    好例子是把Person和Manger一起嵌入Department中。
+    好例子是把Person和Manger一起嵌入Department中,见combining.py
 
 """
 
