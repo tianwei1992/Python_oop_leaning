@@ -32,7 +32,7 @@ class ListInherited:
 		return result
 
 class ListTree:
-	"""A Mix-in class, too,more advanced.
+	"""A Mix-in class, too,more about_class_design.
 	Diffefencee from class ListInherited:
 	    Providing attrs with where the inheritance from
 	Note:
