@@ -22,7 +22,9 @@ class Manager():
 		self.person.level = level
 		self.person.count += 1
 	def __str__(self):
-		"""__getattr__能够找到普通的属性，但是找不到隐式的属性，所以要自己定义"""
+		"""
+		不是继承，所以不会自动调用父类的__str__方法，不自己定义的话，打印Manager就是built-in的样式了。
+		虽然有__getattr__，但__getattr__能够找到普通的属性，但是找不到隐式的属性，比如__getattr__(self, "__str__)"这种是拿不到结果的"""
 		return str(self.person)
 	def __getattr__(self, attr):
 		return getattr(self.person, attr)
@@ -30,6 +32,8 @@ class Manager():
 if __name__ == "__main__":
 	a = Person('a', 24)
 	b = Manager('b', 25, "1")
+	print(a)
+	print(b)
 	print(a.__dict__)
 	print(a.__class__.__name__)
 	print(b.__dict__)
