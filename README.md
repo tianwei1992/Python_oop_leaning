@@ -21,7 +21,7 @@ _参考：《Python学习手册》第六部分 OOP相关_
    
 4. advanced/
    * builtin_class_extending/演示了内置类的两种扩展方式，代理和继承。其中继承之后，可以是简单修改原有类型的行为，也可以增加新的方法，使之成为与原类型差别较大的类型。
-   * slots_and_property/演示了在class里面使用slots和property的方法。
+   * slots_and_property/演示了在class里面使用slots和property的方法，对于property详细演示了装饰器用法和静态获取属性实现隐式函数调用。
    * staticmehod_and_classmethod/演示了静态方法和类方法实现了超类实例化次数的统计，最后还用类方法实现了从超类到每个子类各自实例化次数的统计。
    * decorator_demo/简单演示了函数装饰器和类装饰器，其中类装饰器部分是以改写staticmehod_and_classmethod/count_instances_for_each_class_with_classmethod作为演示。
    * nester.py 展示的是函数中嵌套类带来的作用域问题，主要是Python2.2以前的问题，Python3也要注意类的方法中是不能直接看到类的其他变量或者方法的，但是可以看到类名，于是需要用self或者类名去找到其他变量或者方法，如果需要的话。
