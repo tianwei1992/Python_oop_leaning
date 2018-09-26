@@ -47,7 +47,7 @@ class PropSquare:
 		return self.value ** 2
 	def setX(self, value): # On attr assign
 		self.value = value
-		X = property(getX, setX) # No delete or docs
+	X = property(getX, setX) # No delete or docs
 P = PropSquare(3) # 2 instances of class with property
 Q = PropSquare(32) # Each has different state information
 print(P.X) # 3 ** 2
