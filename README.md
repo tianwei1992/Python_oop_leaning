@@ -25,4 +25,5 @@ _参考：《Python学习手册》第六部分 OOP相关_
    * staticmehod_and_classmethod/演示了静态方法和类方法实现了超类实例化次数的统计，最后还用类方法实现了从超类到每个子类各自实例化次数的统计。
    * decorator_demo/简单演示了函数装饰器和类装饰器，其中类装饰器部分是以改写staticmehod_and_classmethod/count_instances_for_each_class_with_classmethod作为演示。
    * nester.py 展示的是函数中嵌套类带来的作用域问题，主要是Python2.2以前的问题，Python3也要注意类的方法中是不能直接看到类的其他变量或者方法的，但是可以看到类名，于是需要用self或者类名去找到其他变量或者方法，如果需要的话。
+   * descriptor_demo.py 演示了描述符的基本用法，以及变量的状态分别保存在描述符状态中和实例状态中这两种情况，最后用描述符语法仿写了property，借以理解property可以算是描述符的特殊情况。
 
