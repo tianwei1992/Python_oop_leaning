@@ -48,10 +48,11 @@ class Person:
 	"""client class"""
 	def __init__(self, name):
 		self._name = name
-	name = Property(getName, setName)  # Use like property()
+	name = Property(getName, setName, doc="docing")  # Use like property()
 
 grace = Person("grace")
 print(grace.name)
 grace.name = "grace2"
 print(grace.name)
+print(Person.name.__doc__)
 

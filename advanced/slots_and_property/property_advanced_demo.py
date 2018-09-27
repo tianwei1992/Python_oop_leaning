@@ -25,3 +25,6 @@ print('-'*20)
 sue = Person('Sue Jones') # sue inherits property too
 print(sue.name)
 print(Person.name.__doc__) # Or help(Person.name)
+
+"""Notes：
+现有普通的类属性self._name，然后为了方便管理，用property定义了特性name，但调用xx.name归根结底还是访问到self._name"""

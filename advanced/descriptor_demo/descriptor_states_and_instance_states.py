@@ -12,12 +12,13 @@
 因为它们都有自己的状态，所以可以很容易地在内部保存数据，而不用将数据添加到客
 户实例对象的命名空间中。
 
+描述符定义属性，归根结底也是要去访问存储在客户类或者自身描述符类中的一个属性
 
 """
 
 """Example 1"""
 # value是由描述符状态保存的
-# 如果在客户类的实例中使用相同的名字
+# 描述符的实例，特性X，是为了能够访问到描述符类本身的self.value
 class DescState: # Use descriptor state
 	def __init__(self, value):
 		self.value = value
@@ -44,7 +45,9 @@ print(obj.X, obj.Y, obj.Z)
 print()
 
 """Example 2"""
-# value是由客户实例保存的
+# value是由客户实例和描述符实例共同保存的
+# 描述符DescState的实例，特性X，是为了能够访问到描述符类DescState本身的self.value
+# 描述符InstState的实例，特性Y,是为了访问客户类的self._Y.
 class InstState: # Using instance state
 	def __get__(self, instance, owner):
 		print('InstState get') # Assume set by client class
