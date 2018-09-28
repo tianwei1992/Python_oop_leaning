@@ -23,7 +23,7 @@ class Property:
 
 def fget(instance):
 	print("in fget")
-	return instance._name #如果写instance.name会引起无尽的递归,grace.name -> Property._get_-> fget(grace) -> grace.name
+	return instance._name #如果写instance.name会引起无尽的递归,grace.name -> Property._get_-> fget(grace) -> grace.name，fget应该是执行的最后一公里了，需要给出直接拿到答案的办法
 def fset(instance, value):
 	print("in fset")
 	instance._name = value
