@@ -2,7 +2,7 @@
 _参考：《Python学习手册》第六部分 OOP相关_
 
 ## 文档结构
-1. 两个文件夹，basic和advanced，前者对应27章，后者是更高级的用法。
+1. 3个文件夹，basic、advanced、about_class_design，basic对应书上27章，about_class_design对应30章，其他类的高级用法大多在advanced里面。
 
 2. basic/
    * classtools.py演示了工具类的定义，比如AttrDisplay类。
@@ -25,5 +25,14 @@ _参考：《Python学习手册》第六部分 OOP相关_
    * staticmehod_and_classmethod/演示了静态方法和类方法实现了超类实例化次数的统计，最后还用类方法实现了从超类到每个子类各自实例化次数的统计。
    * decorator_demo/简单演示了函数装饰器和类装饰器，其中类装饰器部分是以改写staticmehod_and_classmethod/count_instances_for_each_class_with_classmethod作为演示。
    * nester.py 展示的是函数中嵌套类带来的作用域问题，主要是Python2.2以前的问题，Python3也要注意类的方法中是不能直接看到类的其他变量或者方法的，但是可以看到类名，于是需要用self或者类名去找到其他变量或者方法，如果需要的话。
-   * descriptor_demo.py 演示了描述符的基本用法，以及变量的状态分别保存在描述符状态中和实例状态中这两种情况，最后用描述符语法仿写了property，借以理解property可以算是描述符的特殊情况。
+   * class_attributes_management包含了类属性管理的4种办法：
+     1. property（在slots_and_property/中已经演示过，这里不再重复）
+     2.  descriptor
+     3.  __getattr__
+     4.  __getattribute__ 
+     
+     其中前2个是制造某一个特定的属性，而后2个是拦截通用的各种属性，所以在编码时后两者需要考虑的问题更多更广泛。
+     - descriptor_demo/ 演示了描述符的基本用法，以及变量的状态分别保存在描述符状态中和实例状态中这两种情况，最后用描述符语法仿写了property，借以理解property可以算是描述符的特殊情况。
+     - getattr_and_getattribute/ 演示了__getattr和__getattribute的基本用法，通过两种办法等效地实现一个虚拟属性来展示了两种用法的区别，重点需要关如何避免递归调用(感觉比较复杂)。
+     - comparation_with_4_methods/ 通过用4种方法实现同一个任务——添加类的属性，借此巩固了以上4种方法，并展示了彼此的差异。这里需要注意细节。带有improved的是看书后改进的最终版本，不带的是原始版本。
 
