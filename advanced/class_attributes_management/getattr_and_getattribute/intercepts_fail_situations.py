@@ -60,4 +60,14 @@ Conclusion:
 __getattribute__不会运行，因为这样的名称只在类中查找：
 注意，在Python 2.6中，这里的__getattr__如何拦截__call__和__str__的隐式和显式获
 取。相反，对于内置操作的任何属性名，__getattribute__不能捕捉隐式获取
+
+对pyton3，X.__str__()未能被getattr捕获，是因为不属于未定义属性（父类有定义）;getattribute: __str__被getattribute捕获。
+
+__c a l l__属于未定义属性（父类也没有定义过）在Python 3.0中用于内置调用表达式的两次都没有捕获，但是，当显式获取的时候，它两次都拦截到了；和__s t r__不同，没有继承的__c a l l__默认版本能
+够超越__getattr__。
+
+__l e n__被两个类都捕获了，直接原因是，它在类自身中是一个显式定义的方法——它的名称指明了，在Python 3.0中，如果我们删除了类的__len__方法，它不会指向__getattr__或__getattribute__。
+
+所有其他的内置操作在Python 3.0中都没有被两种方案拦截。
+
 """
